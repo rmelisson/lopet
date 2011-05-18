@@ -3,4 +3,21 @@ This is a nice website for your rights... or something like that, I'm
 not sur I well understand the matter... nblalablabzdabzduioaho afoahofaf
 aofhao of aofha afaozfh aofaflmkvpsodi  pzfopcp zpfoz. 
 <br/>
-<div id="go"><h3><a href="">Access to facil</a></h3></div>
+<div id="go">
+	<h3><%= link_to "Create an account", new_user_path %>  </h3>
+
+	<div>
+		<%= form_tag sessions_path do %>
+			<p>
+				<%= label_tag :email %><br />
+				<%= text_field_tag :email, params[:email] %>
+			</p>
+			<p>
+				<%= label_tag :password %><br />
+				<%= password_field_tag :password %>
+			</p>
+			<h3 class="button"><%= submit_tag "Log in" %></h2>
+		<% end %>
+	</div>
+
+</div>
