@@ -1,13 +1,24 @@
 Lopet::Application.routes.draw do
 
+  root :to => "welcome#index"
+
+	# User management
+	resources :users
+	resources :sessions
 	get "sign_up" => "users#new", :as => "sign_up"
 	get "log_out" => "sessions#destroy", :as => "log_out"
 	get "log_in" => "sessions#new", :as => "log_in"
 
-  root :to => "welcome#index"
+	match "home" => "welcome#home", :as => "home"
 
-	resources :users
-	resources :sessions
+	# Admin
+	resources :admin_sessions
+	get "admin_log_out" => "admin_sessions#destroy", :as => "admin_log_out"
+	get "admin_in" => "admin_sessions#new", :as => "admin_log_in"
+	
+
+	
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
