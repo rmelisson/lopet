@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @tipo.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @tipo.description %>
+</p>
+
+<p>
+  <b>Derechos:</b>
+	<ul>
+		<% @tipo.derechos.each do |derecho| %>
+			<li><%= derecho.title %></li>
+		<% end %>
+	</ul>
+</p>
+
+<%= link_to 'Edit', edit_tipo_path(@tipo) %> |
+<%= link_to 'Back', tipos_path %>

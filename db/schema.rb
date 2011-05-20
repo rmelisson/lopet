@@ -10,12 +10,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110520095731) do
+ActiveRecord::Schema.define(:version => 20110520135029) do
 
   create_table "admins", :force => true do |t|
     t.string   "login"
     t.string   "password_hash"
     t.string   "password_salt"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "derechos", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "tipo_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tipos", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
