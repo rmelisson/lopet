@@ -1,9 +1,10 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  login: MyString
-  password_hash: MyString
-  password_salt: MyString
+  login: loginone
+  password_hash: $2a$10$iSr/ZGeEH2fqM77Q8ldSYOCywrD2GBaaErmN6gahZgE1kftz3n6Qa
+  password_salt: $2a$10$iSr/ZGeEH2fqM77Q8ldSYO
+	#password = cool
 
 two:
   login: MyString

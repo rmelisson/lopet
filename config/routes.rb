@@ -1,7 +1,5 @@
 Lopet::Application.routes.draw do
 
-  resources :tipos
-
   root :to => "welcome#index"
 
 	# User management
@@ -16,10 +14,10 @@ Lopet::Application.routes.draw do
 	# Admin
 	resources :admin_sessions
 	get "admin_log_out" => "admin_sessions#destroy", :as => "admin_log_out"
-	get "admin_in" => "admin_sessions#new", :as => "admin_log_in"
-	
-
-	
+	get "admin_log_in" => "admin_sessions#new", :as => "admin_log_in"
+		
+	# Data
+  resources :tipos
 
 
   # The priority is based upon order of creation:
