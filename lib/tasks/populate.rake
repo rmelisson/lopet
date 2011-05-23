@@ -4,12 +4,13 @@ namespace :db do
 	task :populate => :environment do
 		require "populator"
 		
-		[User, Admin, Tipo].each(&:delete_all)
+		[User, Admin, Tipo, Formulario, Accion].each(&:delete_all)
 
 		User.populate 1 do |user|
 			user.email = "a@a.a"
       user.password_salt = BCrypt::Engine.generate_salt
       user.password_hash = BCrypt::Engine.hash_secret("cool", user.password_salt)
+			$user_id = user.id
 		end
 
 		Admin.populate 1 do |admin|
@@ -27,6 +28,21 @@ namespace :db do
       	derecho.description = Populator.sentences(1)
 			end
 		end
+
+		Formulario.populate 5 do |formulario|
+			formulario.title = Populator.words(1..5).titleize
+			formulario.description = Populator.sentences(1)
+			formulario.arguments = Populator.sentences(3..10)
+			formulario.conclusion = Populator.sentences(1..2) 
+			$formulario_id = formulario.id
+		end
+
+		Accion.populate 1 do |accion|
+			accion.hechos = Populator.sentences(3..6)
+			accion.user_id = $user_id
+			accion.formulario_id = $formulario_id
+		end
+
 	end
 end
 				

@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  hechos: MyText
+  user: 
+  formulario: 
+
+two:
+  hechos: MyText
+  user: 
+  formulario: 

@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Hechos:</b>
+  <%= @accion.hechos %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @accion.user %>
+</p>
+
+<p>
+  <b>Formulario:</b>
+  <%= @accion.formulario %>
+</p>
+
+
+<%= link_to 'Edit', edit_accion_path(@accion) %> |
+<%= link_to 'Back', accions_path %>

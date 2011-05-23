@@ -1,0 +1,29 @@
+<h1>Listing formularios</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Arguments</th>
+    <th>Conclusion</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @formularios.each do |formulario| %>
+  <tr>
+    <td><%= formulario.title %></td>
+    <td><%= formulario.description %></td>
+    <td><%= formulario.arguments %></td>
+    <td><%= formulario.conclusion %></td>
+    <td><%= link_to 'Show', formulario %></td>
+    <td><%= link_to 'Edit', edit_formulario_path(formulario) %></td>
+    <td><%= link_to 'Destroy', formulario, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Formulario', new_formulario_path %>

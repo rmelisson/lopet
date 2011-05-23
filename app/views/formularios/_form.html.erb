@@ -1,0 +1,33 @@
+<%= form_for(@formulario) do |f| %>
+  <% if @formulario.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@formulario.errors.count, "error") %> prohibited this formulario from being saved:</h2>
+
+      <ul>
+      <% @formulario.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :arguments %><br />
+    <%= f.text_area :arguments %>
+  </div>
+  <div class="field">
+    <%= f.label :conclusion %><br />
+    <%= f.text_area :conclusion %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

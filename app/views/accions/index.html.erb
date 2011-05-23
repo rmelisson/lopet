@@ -1,0 +1,27 @@
+<h1>Listing accions</h1>
+
+<table>
+  <tr>
+    <th>Hechos</th>
+    <th>User</th>
+    <th>Formulario</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @accions.each do |accion| %>
+  <tr>
+    <td><%= accion.hechos %></td>
+    <td><%= accion.user %></td>
+    <td><%= accion.formulario %></td>
+    <td><%= link_to 'Show', accion %></td>
+    <td><%= link_to 'Edit', edit_accion_path(accion) %></td>
+    <td><%= link_to 'Destroy', accion, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Accion', new_accion_path %>

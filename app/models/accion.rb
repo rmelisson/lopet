@@ -1,0 +1,4 @@
+class Accion < ActiveRecord::Base
+  belongs_to :user
+  belongs_to :formulario
+end

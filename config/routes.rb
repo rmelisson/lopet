@@ -1,5 +1,9 @@
 Lopet::Application.routes.draw do
 
+  resources :accions
+
+  resources :formularios
+
   root :to => "welcome#index"
 
 	# User management
