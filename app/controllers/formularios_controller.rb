@@ -1,4 +1,5 @@
 class FormulariosController < ApplicationController
+	require "RedCloth"
 
 	before_filter :is_admin, :except => [:show]
 
@@ -83,4 +84,11 @@ class FormulariosController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+	def preview
+    @formulario = Formulario.find(params[:id])
+		@formulario.arguments =
+RedCloth.new(@formulario.arguments).to_html
+	end
+
 end

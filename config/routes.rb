@@ -19,7 +19,9 @@ Lopet::Application.routes.draw do
 	# Data
   resources :tipos
   resources :accions
-  resources :formularios
+  resources :formularios do
+		get 'preview', :on => :member
+	end
 
 	# Logic
 	get "generate" => "generator#generate", :as => "generate"
