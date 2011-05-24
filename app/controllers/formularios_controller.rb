@@ -1,4 +1,7 @@
 class FormulariosController < ApplicationController
+
+	before_filter :is_admin, :except => [:show]
+
   # GET /formularios
   # GET /formularios.xml
   def index

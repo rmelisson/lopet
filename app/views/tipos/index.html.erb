@@ -1,25 +1,23 @@
-<h1>Listing tipos</h1>
+<h2>Tipos de derechos fundamentales</h2>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @tipos.each do |tipo| %>
-  <tr>
-    <td><%= tipo.title %></td>
-    <td><%= tipo.description %></td>
-    <td><%= link_to 'Show', tipo %></td>
-    <td><%= link_to 'Edit', edit_tipo_path(tipo) %></td>
-    <td><%= link_to 'Destroy', tipo, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+<% if admin %>
+	<%= link_to 'New Tipo', new_tipo_path %>
 <% end %>
-</table>
 
 <br />
 
-<%= link_to 'New Tipo', new_tipo_path %>
+<ul>
+	<% @tipos.each do |tipo| %>
+		<li>
+			<h4><%= tipo.title %></h4>
+			<p><%= tipo.description %></p>
+			<% if admin %>
+    		<%= link_to 'Edit', edit_tipo_path(tipo) %>
+    		<%= link_to 'Destroy', tipo, :confirm => 'Are you sure?', :method => :delete %>
+			<% end %>
+		</li>
+	<% end %>
+</ul>
+
+<br />
+

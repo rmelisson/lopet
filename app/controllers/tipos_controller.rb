@@ -1,4 +1,7 @@
 class TiposController < ApplicationController
+
+	before_filter :is_admin, :except => [:index, :show]
+
   # GET /tipos
   # GET /tipos.xml
   def index

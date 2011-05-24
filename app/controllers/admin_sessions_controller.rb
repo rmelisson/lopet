@@ -6,7 +6,7 @@ class AdminSessionsController < ApplicationController
 			session[:admin_id] = admin.id
 			redirect_to home_path, :notice => "Logged in!"
 		else
-			flash.now.alert = "Invalid login or password"
+			flash[:alert] = "Invalid login or password"
 			redirect_to root_url
 		end
 	end

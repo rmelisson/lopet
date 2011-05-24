@@ -57,5 +57,21 @@ a:hover {
 	text-align: center;
 }
 
+#menu {
+	text-align : right;
+	font-size : 20px;	
+	margin : 10px;
+}
 
+#user_nav {
+	text-align : right;
+}
+
+#flash_alert {
+	color : red;
+}
+
+#flash_notice {
+	color : green;
+}
 
