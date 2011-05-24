@@ -87,8 +87,8 @@ class FormulariosController < ApplicationController
 
 	def preview
     @formulario = Formulario.find(params[:id])
-		@formulario.arguments =
-RedCloth.new(@formulario.arguments).to_html
+		render :preview, :locals => {:arguments =>
+RedCloth.new(@formulario.arguments).to_html}
 	end
 
 end
