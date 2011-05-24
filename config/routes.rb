@@ -1,10 +1,8 @@
 Lopet::Application.routes.draw do
 
-  resources :accions
-
-  resources :formularios
 
   root :to => "welcome#index"
+	match "home" => "welcome#home", :as => "home"
 
 	# User management
 	resources :users
@@ -13,8 +11,6 @@ Lopet::Application.routes.draw do
 	get "log_out" => "sessions#destroy", :as => "log_out"
 	get "log_in" => "sessions#new", :as => "log_in"
 
-	match "home" => "welcome#home", :as => "home"
-
 	# Admin
 	resources :admin_sessions
 	get "admin_log_out" => "admin_sessions#destroy", :as => "admin_log_out"
@@ -22,7 +18,12 @@ Lopet::Application.routes.draw do
 		
 	# Data
   resources :tipos
+  resources :accions
+  resources :formularios
 
+	# Logic
+	get "generate" => "generator#generate", :as => "generate"
+	
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

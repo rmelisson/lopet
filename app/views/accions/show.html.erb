@@ -7,14 +7,15 @@
 
 <p>
   <b>User:</b>
-  <%= @accion.user %>
+  <%= @accion.user.email %>
 </p>
 
 <p>
   <b>Formulario:</b>
-  <%= @accion.formulario %>
+  <%= @accion.formulario.title %>
 </p>
 
 
 <%= link_to 'Edit', edit_accion_path(@accion) %> |
+<%= link_to 'Generate', generate_path(:id => @accion.id) %> |
 <%= link_to 'Back', accions_path %>
