@@ -1,4 +1,7 @@
 class AccionsController < ApplicationController
+
+	before_filter :is_user
+
   # GET /accions
   # GET /accions.xml
   def index

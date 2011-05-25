@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 	helper_method :admin
 
 	helper_method :is_admin
-	helper_method :user_auth
+	helper_method :is_user
 
 	private
 	
