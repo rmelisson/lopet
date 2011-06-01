@@ -7,7 +7,9 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-	<div id="page">
+<div>
+	<div id="header_frame">
+	<div id="header">
 		<h1>Facil <% if admin %> / admin <% end %> </h1>
 
 		<div id="user_nav">
@@ -39,7 +41,10 @@
 				<%= link_to 'stats', tipos_path %>
 			</div>
 		<% end %>		
+	</div>
+	</div>
 
+	<div id="main"/>
 		<div id="content">
 			<%= yield %>
 		</div>
@@ -48,5 +53,6 @@
 			All rights reserved <%= link_to "Lopet", admin_log_in_path %> & Melisson 2011
 		</div>
 	</div>
+</div>
 </body>
 </html>
