@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
 
 	def is_admin 
 		unless session[:admin_id] 
-			flash[:error] = "It's not your business"
+			flash[:alert] = "It's not your business"
 			redirect_to root_url
 			return false
 		end
@@ -27,7 +27,7 @@ class ApplicationController < ActionController::Base
 	
 	def is_user 
 		unless session[:user_id] 
-			flash[:error] = "You have to be connected"
+			flash[:alert] = "You have to be connected"
 			redirect_to root_url
 			return false
 		end

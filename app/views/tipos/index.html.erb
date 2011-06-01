@@ -15,6 +15,12 @@
     		<%= link_to 'Edit', edit_tipo_path(tipo) %>
     		<%= link_to 'Destroy', tipo, :confirm => 'Are you sure?', :method => :delete %>
 			<% end %>
+			<ul>
+				<% tipo.derechos.each do |derecho| %>
+					<li> <%= link_to derecho.title, view_derecho_path(:id =>
+derecho.id) %> </li>
+				<% end %>
+			</ul>
 		</li>
 	<% end %>
 </ul>

@@ -6,11 +6,12 @@ namespace :db do
 		
 		[User, Admin, Tipo, Formulario, Accion].each(&:delete_all)
 
-		User.populate 1 do |user|
-			user.email = "a@a.a"
+		i = 1
+		User.populate 2 do |user|
+			user.email = i.to_s + "@a.a"
       user.password_salt = BCrypt::Engine.generate_salt
       user.password_hash = BCrypt::Engine.hash_secret("cool", user.password_salt)
-			$user_id = user.id
+			i += 1
 		end
 
 		Admin.populate 1 do |admin|
@@ -26,21 +27,19 @@ namespace :db do
 				derecho.tipo_id = tipo.id
 				derecho.title = Populator.words(1..5).titleize
       	derecho.description = Populator.sentences(1)
+				Formulario.populate 1..5 do |formulario|
+					formulario.derecho_id = derecho.id
+					formulario.title = Populator.words(1..5).titleize
+					formulario.description = Populator.sentences(1)
+					formulario.arguments = Populator.sentences(3..10)
+				end
 			end
-		end
-
-		Formulario.populate 5 do |formulario|
-			formulario.title = Populator.words(1..5).titleize
-			formulario.description = Populator.sentences(1)
-			formulario.arguments = Populator.sentences(3..10)
-			formulario.conclusion = Populator.sentences(1..2) 
-			$formulario_id = formulario.id
 		end
 
 		Accion.populate 1 do |accion|
 			accion.hechos = Populator.sentences(3..6)
-			accion.user_id = $user_id
-			accion.formulario_id = $formulario_id
+			accion.user_id = 1 
+			accion.formulario_id = 3
 		end
 
 	end

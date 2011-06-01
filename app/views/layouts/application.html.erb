@@ -13,14 +13,11 @@
 		<div id="user_nav">
 
 			<% if current_user %>
-				Logged in as <%= current_user.email %>.
+				<b><i><%= current_user.email %></i></b>
 				<%= link_to "Log out", log_out_path %>
 			<% elsif admin %>
 				Logged in as <%= admin.login %>.
 				<%= link_to "Log out", admin_log_out_path %>
-			<% else %>
-				<%= link_to "Sign up", sign_up_path %> or
-				<%= link_to "log in", log_in_path %>
 			<% end %>
 
 		</div>
@@ -31,15 +28,15 @@
 		
 		<% if current_user %>
 			<div id="menu">
-				<%= link_to 'search', tipos_path %>
+				<%= link_to 'navigate', tipos_path %>
 				<%= link_to 'me', tipos_path%>
 				<%= link_to 'accions', accions_path %>
 			</div>
 
 		<% elsif admin %>
 			<div id="menu">
-				<%= link_to 'tipos', tipos_path %>
-				<%= link_to 'formularios', formularios_path %>
+				<%= link_to 'navigate', tipos_path %>
+				<%= link_to 'stats', tipos_path %>
 			</div>
 		<% end %>		
 

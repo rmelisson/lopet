@@ -17,11 +17,14 @@ Lopet::Application.routes.draw do
 	get "admin_log_in" => "admin_sessions#new", :as => "admin_log_in"
 		
 	# Data
-  resources :tipos
+  resources :tipos do
+		resources :derechos
+	end
   resources :accions
   resources :formularios do
 		get 'preview', :on => :member
 	end
+  match 'derechos/:id' => 'derechos#view', :as => :view_derecho
 
 	# Logic
 	get "generate" => "generator#generate", :as => "generate"

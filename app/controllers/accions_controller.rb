@@ -5,7 +5,7 @@ class AccionsController < ApplicationController
   # GET /accions
   # GET /accions.xml
   def index
-    @accions = Accion.all
+    @accions = current_user.accions 
 
     respond_to do |format|
       format.html # index.html.erb

@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(:version => 20110523091557) do
     t.string   "title"
     t.text     "description"
     t.text     "arguments"
-    t.text     "conclusion"
+    t.integer  "derecho_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,0 +1,7 @@
+<h2><%= @derecho.title %></h2>
+<ul>
+	<% @derecho.formularios.each do |formulario|
+	%>
+		<li> <%= formulario.title %> </li>
+	<%end%>
+</ul>
