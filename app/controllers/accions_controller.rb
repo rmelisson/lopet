@@ -5,7 +5,8 @@ class AccionsController < ApplicationController
   # GET /accions
   # GET /accions.xml
   def index
-    @accions = current_user.accions 
+#    @accions = Accion.where(:user_id => current_user.id).find()
+    @accions = Accion.find_all_by_user_id(current_user.id)
 
     respond_to do |format|
       format.html # index.html.erb

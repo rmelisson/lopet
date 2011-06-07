@@ -1,5 +1,18 @@
-<h1>Listing accions</h1>
+<h2>Sus acciónes de tutela</h2>
 
+<% if @accions.count == 0  %>
+	no accions
+<% else %>
+	<ul>
+	<% @accions.each do |accion| %>
+		<li>
+			<%= link_to accion.formulario.title, accion %>
+    	<i>(<%= accion.updated_at.strftime("%Y-%m-%d") %>)</i>
+		</li>
+	<% end %>
+	</ul>
+
+<!--
 <table>
   <tr>
     <th>Hechos</th>
@@ -14,7 +27,7 @@
   <tr>
     <td><%= accion.hechos %></td>
     <td><%= accion.user %></td>
-    <td><%= accion.formulario %></td>
+    <td><%= accion.formulario.title %></td>
     <td><%= link_to 'Show', accion %></td>
     <td><%= link_to 'Edit', edit_accion_path(accion) %></td>
     <td><%= link_to 'Destroy', accion, :confirm => 'Are you sure?', :method => :delete %></td>
@@ -22,6 +35,6 @@
 <% end %>
 </table>
 
+-->
 <br />
-
-<%= link_to 'New Accion', new_accion_path %>
+<% end %>

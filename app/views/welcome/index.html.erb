@@ -1,20 +1,34 @@
-<h2>Welcome on facil</h2>
+<h2>Welcome on Fácil</h2>
+<p>
 This is a nice website for your rights... or something like that, I'm
 not sur I well understand the matter... nblalablabzdabzduioaho afoahofaf
 aofhao of aofha afaozfh aofaflmkvpsodi  pzfopcp zpfoz. 
-<br/>
+llam voluptatum consequatur nihil fuga mollitia
+numquam expedita eos et. Libero nesciunt animi eum
+tenetur beatae voluptatibus sed porro modi illo
+nulla cum perspiciatis commodi sed. Est autem
+aperiam quas molestiae sequi expedita omnis nesciunt
+voluptates deserunt nisi voluptatem tempore et
+placeat placeat vel illum. Aliquid saepe ea sint qui
+inventore voluptatem qui dicta hic voluptate sunt
+</p>
 <div id="go">
 	
-
-	<h3>Log in</h3>
+	<div class="half" id="log-in">
 		<%= form_tag sessions_path do %>
-				<%= label_tag :email %>
-				<%= text_field_tag :email, params[:email] %>
-				<%= label_tag :password %>
-				<%= password_field_tag :password %>
-			<%= submit_tag "ok" %>
+			<%= label_tag :email %>
+			<br />
+			<%= text_field_tag :email, params[:email] %>
+			<br />
+			<%= label_tag :password %>
+			<br />
+			<%= password_field_tag :password %>
+			<br />
+			<%= submit_tag "Log in !" %>
 		<% end %>
-	<h3>or</h3>
-	<h3><%= link_to "Create an account", new_user_path %>  </h3>
-
+	</div>
+	<div class="half" >
+		<br/>
+		<h3><%= link_to "Create an account", new_user_path %>  </h3>
+	</div>
 </div>

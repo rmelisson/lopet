@@ -2,16 +2,19 @@ body {
 	margin: 0;
 	margin-bottom: 25px;
 	padding: 0;
-	background-color: #f0f0f0;
-	font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
-	font-size: 15px;
+	background-color: #fff;
 	color: #333;
+}
+
+body, p, ol, ul, td {
+  font-family: "Maven Pro", verdana, arial, helvetica, sans-serif;
+  font-size:   13px;
+  line-height: 18px;
 }
 
 h1 {
 	font-size: 38px;
 	color: #000;
-	margin : 0px;
 }
 
 h2 {
@@ -19,12 +22,34 @@ h2 {
 	color: #000;
 }
 
-a  {color: #03c}
+h3 {
+	font-size: 18px;
+}
+
+a, a:visited {
+	color: #000;
+	text-decoration : none;
+	padding: 2px;
+}
+
 a:hover {
 	background-color: #03c;
 	color: white;
 	text-decoration: none;
 }
+
+/*-- page --*/
+
+#logo {
+	font-family: "Pacifico", "Bitstream Vera Sans", "Verdana";
+	font-size: 50px;
+  font-style: normal;
+  font-weight: 400;
+  text-shadow: 2px 2px 2px #aaa;
+	color: #000;
+	margin: 5px;
+}
+
 
 #header_frame {
 	background-color: #EDF;
@@ -42,7 +67,6 @@ a:hover {
 	margin-left: auto;
 	margin-right: auto;
 	background-color: white;
-	border:1px solid #aaa;
 	padding: 25px;
 }
 
@@ -50,6 +74,8 @@ a:hover {
 	border: 0px solid #aaa;
 	padding: 25px;
 	padding-top: 5px;
+	border-left:1px solid #f0f0f0;
+	border-right:1px solid #f0f0f0;
 /*	border:1px solid #aaa;*/
 }
 
@@ -62,9 +88,7 @@ a:hover {
 	font-size: 12px;
 }
 
-#go {
-	text-align: center;
-}
+/*-- menu  --*/
 
 #menu {
 	text-align : right;
@@ -72,8 +96,22 @@ a:hover {
 	margin : 10px;
 }
 
+#menu_item {
+
+}
+
+#menu_selected {
+
+}
+
 #user_nav {
 	text-align : right;
+}
+
+/*-- alert --*/
+
+#flash {
+	text-align : center;
 }
 
 #flash_alert {
@@ -83,4 +121,38 @@ a:hover {
 #flash_notice {
 	color : green;
 }
+
+/*-- welcome --*/
+#go {
+	text-align : center;
+	margin-left: auto;
+	margin-right: auto;
+	height : 150px;
+	margin-top : 50px;
+}
+
+#log-in {
+	border-right : 1px solid #f0f0f0;
+	text-align : left;
+	padding-left : 70px;
+}
+
+#log-in input, #log-in textarea {
+/*	background-color: #ffffff; */
+}
+
+#log-in input[type="submit"] {
+	border : none;
+	font-size : 17px;
+	margin-top : 15px;
+	padding-left: 70px;
+	font-weight:bold;
+	background-color: #ffffff;
+}
+
+.half {
+	float: left;
+	width : 300px;
+}
+
 
