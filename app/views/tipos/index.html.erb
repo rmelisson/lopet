@@ -9,8 +9,8 @@
 <ul>
 	<% @tipos.each do |tipo| %>
 		<li>
-			<h4><%= tipo.title %></h4>
-			<p><%= tipo.description %></p>
+			<h3><%= tipo.title %></h3>
+			<p class="desc"><i><%= tipo.description %></i></p>
 			<% if admin %>
     		<%= link_to 'Edit', edit_tipo_path(tipo) %>
     		<%= link_to 'Destroy', tipo, :confirm => 'Are you sure?', :method => :delete %>

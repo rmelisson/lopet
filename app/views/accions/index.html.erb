@@ -28,7 +28,7 @@
     <td><%= accion.hechos %></td>
     <td><%= accion.user %></td>
     <td><%= accion.formulario.title %></td>
-    <td><%= link_to 'Show', accion %></td>
+    <td><%= link_to 'Show', accion_path(accion) %></td>
     <td><%= link_to 'Edit', edit_accion_path(accion) %></td>
     <td><%= link_to 'Destroy', accion, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>

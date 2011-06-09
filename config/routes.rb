@@ -1,33 +1,39 @@
 Lopet::Application.routes.draw do
 
 
-  root :to => "welcome#index"
-	match "home" => "welcome#home", :as => "home"
+  root :to => 'welcome#index'
+	match 'home' => 'welcome#home', :as => 'home'
 
 	# User management
 	resources :users
 	resources :sessions
-	get "sign_up" => "users#new", :as => "sign_up"
-	get "log_out" => "sessions#destroy", :as => "log_out"
-	get "log_in" => "sessions#new", :as => "log_in"
+	get 'sign_up' => 'users#new', :as => 'sign_up'
+	get 'log_out' => 'sessions#destroy', :as => 'log_out'
+	get 'log_in' => 'sessions#new', :as => 'log_in'
 
 	# Admin
 	resources :admin_sessions
-	get "admin_log_out" => "admin_sessions#destroy", :as => "admin_log_out"
-	get "admin_log_in" => "admin_sessions#new", :as => "admin_log_in"
+	get 'admin_log_out' => 'admin_sessions#destroy', :as => 'admin_log_out'
+	get 'admin_log_in' => 'admin_sessions#new', :as => 'admin_log_in'
 		
 	# Data
   resources :tipos do
 		resources :derechos
 	end
-  resources :accions
   resources :formularios do
 		get 'preview', :on => :member
 	end
   match 'derechos/:id' => 'derechos#view', :as => :view_derecho
+	
+	# Accion	
+	get 'accions' => 'accions#index', :as => 'accions'
+	match 'accions/show/:id' => 'accions#show', :as => 'accion'
+	match 'accions/edit/:id' => 'accions#edit', :as => 'edit_accion'
+	match 'accions/create/:id' => 'accions#create', :as => 'create_accion'
+	match 'accions/update/:id' => 'accions#update', :as => 'update_accion'
 
 	# Logic
-	get "generate" => "generator#generate", :as => "generate"
+	get 'generate' => 'generator#generate', :as => 'generate'
 	
 
   # The priority is based upon order of creation:
@@ -77,10 +83,10 @@ Lopet::Application.routes.draw do
   #     resources :products
   #   end
 
-  # You can have the root of your site routed with "root"
+  # You can have the root of your site routed with 'root'
   # just remember to delete public/index.html.
 
-  # See how all your routes lay out with "rake routes"
+  # See how all your routes lay out with 'rake routes'
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.

@@ -1,20 +1,14 @@
-<p id="notice"><%= notice %></p>
+<h2>Acción de tutela</h2>
+
+<p>
+  <b>Problema:</b>
+  <%= @accion.formulario.title %>
+</p>
 
 <p>
   <b>Hechos:</b>
   <%= @accion.hechos %>
 </p>
-
-<p>
-  <b>User:</b>
-  <%= @accion.user.email %>
-</p>
-
-<p>
-  <b>Formulario:</b>
-  <%= @accion.formulario.title %>
-</p>
-
 
 <%= link_to 'Edit', edit_accion_path(@accion) %> |
 <%= link_to 'Generate', generate_path(:id => @accion.id) %> |

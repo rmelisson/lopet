@@ -2,6 +2,11 @@
 <ul>
 	<% @derecho.formularios.each do |formulario|
 	%>
-		<li> <%= formulario.title %> </li>
+		<li> 
+			<h3>
+				<%= link_to formulario.title, create_accion_path(formulario), :confirm => 'Do you really want to create a new accion de tutela ?' %> 
+			</h3>
+			<p class="desc"><i><%= formulario.description %></i></p>
+		</li>
 	<%end%>
 </ul>

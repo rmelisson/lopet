@@ -5,7 +5,6 @@ class AccionsController < ApplicationController
   # GET /accions
   # GET /accions.xml
   def index
-#    @accions = Accion.where(:user_id => current_user.id).find()
     @accions = Accion.find_all_by_user_id(current_user.id)
 
     respond_to do |format|
@@ -25,17 +24,6 @@ class AccionsController < ApplicationController
     end
   end
 
-  # GET /accions/new
-  # GET /accions/new.xml
-  def new
-    @accion = Accion.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @accion }
-    end
-  end
-
   # GET /accions/1/edit
   def edit
     @accion = Accion.find(params[:id])
@@ -44,7 +32,8 @@ class AccionsController < ApplicationController
   # POST /accions
   # POST /accions.xml
   def create
-    @accion = Accion.new(params[:accion])
+    @accion = Accion.new(:formulario_id => params[:id],
+:user_id => current_user.id)
 
     respond_to do |format|
       if @accion.save

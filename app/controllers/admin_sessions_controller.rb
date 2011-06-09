@@ -4,7 +4,7 @@ class AdminSessionsController < ApplicationController
 		admin = Admin.authenticate(params[:login], params[:password])
 		if admin
 			session[:admin_id] = admin.id
-			redirect_to home_path, :notice => "Logged in!"
+			redirect_to tipos_path, :notice => "Logged in!"
 		else
 			flash[:alert] = "Invalid login or password"
 			redirect_to root_url

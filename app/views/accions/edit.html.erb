@@ -1,6 +1,14 @@
 <h1>Editing accion</h1>
 
-<%= render 'form' %>
+<!--<%= render 'form' %>-->
+<%= form_for :accion, @accion, :url => { :action =>
+'update'} do |accion_form| %>
+	<%= accion_form.text_area :hechos %>
+	<br>
+	<%= submit_tag 'Update' %>
+<%end%>
 
+	<br>
+	<br>
 <%= link_to 'Show', @accion %> |
 <%= link_to 'Back', accions_path %>
