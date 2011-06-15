@@ -1,0 +1,10 @@
+- The easiest way, install :
+rvm
+ruby 1.9.2
+rubygem
+rails
+bundle
+
+- Then run into application home :
+bundle install
+
