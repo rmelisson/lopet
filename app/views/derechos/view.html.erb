@@ -7,6 +7,13 @@
 				<%= link_to formulario.title, create_accion_path(formulario), :confirm => 'Do you really want to create a new accion de tutela ?' %> 
 			</h3>
 			<p class="desc"><i><%= formulario.description %></i></p>
+			
+			<% if admin%>
+				<td><%= link_to 'Show', formulario %></td>
+				<td><%= link_to 'Edit', edit_formulario_path(formulario) %></td>
+				<td><%= link_to 'Destroy', formulario, :confirm => 'Are you sure?', :method => :delete %></td>
+			<% end %>			
+
 		</li>
 	<%end%>
 </ul>

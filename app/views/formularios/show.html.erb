@@ -14,8 +14,7 @@
   <b>Arguments:</b>
   <%= @formulario.arguments %>
 </p>
-<%= link_to 'Preview',
-preview_formulario_path(@formulario) %>
 
 <%= link_to 'Edit', edit_formulario_path(@formulario) %> |
-<%= link_to 'Back', formularios_path %>
+<%= link_to 'Back', view_derecho_path(:id =>
+@formulario.derecho_id ) %>

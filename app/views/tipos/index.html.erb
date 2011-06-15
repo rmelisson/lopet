@@ -9,12 +9,14 @@
 <ul>
 	<% @tipos.each do |tipo| %>
 		<li>
-			<h3><%= tipo.title %></h3>
+			<span>
+				<h3><%= tipo.title %></h3>
+				<% if admin %>
+					<%= link_to 'Edit', edit_tipo_path(tipo) %>
+					<%= link_to 'Destroy', tipo, :confirm => 'Are you sure?', :method => :delete %>
+				<% end %>
+			</span>
 			<p class="desc"><i><%= tipo.description %></i></p>
-			<% if admin %>
-    		<%= link_to 'Edit', edit_tipo_path(tipo) %>
-    		<%= link_to 'Destroy', tipo, :confirm => 'Are you sure?', :method => :delete %>
-			<% end %>
 			<ul>
 				<% tipo.derechos.each do |derecho| %>
 					<li> <%= link_to derecho.title, view_derecho_path(:id =>
