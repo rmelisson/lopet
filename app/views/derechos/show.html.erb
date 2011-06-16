@@ -1,8 +1,11 @@
 <h2><%= @derecho.title %></h2>
 <% if admin %>
-	<%= link_to "Edit", edit_derecho_path(:id => @derecho.id)
-%>
+	<%= link_to "Edit", edit_derecho_path(:id => @derecho.id)%>
+	 | 
 <% end %>
+	
+<%= link_to "Destroy", tipos_path %> | 
+<%= link_to "Back", tipos_path %>
 
 <ul>
 	<% @derecho.formularios.each do |formulario|

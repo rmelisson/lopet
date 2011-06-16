@@ -17,13 +17,20 @@ Lopet::Application.routes.draw do
 	get 'admin_log_in' => 'admin_sessions#new', :as => 'admin_log_in'
 		
 	# Data
+	resources :derechos
   resources :tipos do
 		resources :derechos
 	end
   resources :formularios do
 		get 'preview', :on => :member
 	end
-  match 'derechos/:id' => 'derechos#view', :as => :view_derecho
+
+	resources :derechos
+# match 'derechos/edit/:id' => 'derechos#edit', :as => 'edit_derecho'
+#	match 'derechos/show/:id' => 'derechos#show', :as => 'derecho'
+#	match 'derechos/new/:id' => 'derechos#new', :as => 'new_derecho'
+#	put 'derechos/update/:id' => 'derechos#update', :as => 'update_derecho'
+#	match 'derechos/create/:id' => 'derechos#create', :as => 'create_derecho'
 	
 	# Accion	
 	get 'accions' => 'accions#index', :as => 'accions'

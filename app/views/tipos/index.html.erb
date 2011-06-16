@@ -19,9 +19,12 @@
 			<p class="desc"><i><%= tipo.description %></i></p>
 			<ul>
 				<% tipo.derechos.each do |derecho| %>
-					<li> <%= link_to derecho.title, view_derecho_path(:id =>
+					<li> <%= link_to derecho.title, derecho_path(:id =>
 derecho.id) %> </li>
 				<% end %>
+				<li>
+					<%= link_to '... new derecho', new_derecho_path(:id =>
+tipo.id) %> 
 			</ul>
 		</li>
 	<% end %>
