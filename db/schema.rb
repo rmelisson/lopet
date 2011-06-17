@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(:version => 20110617150723) do
     t.datetime "updated_at"
   end
 
-  create_table "formularios", :force => true do |t|
+  create_table "formularios_backup", :force => true do |t|
     t.string   "title"
     t.text     "description"
     t.text     "arguments"
