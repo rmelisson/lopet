@@ -1,10 +1,11 @@
-<h1>Listing autoridads</h1>
+<h2>Listing autoridads</h2>
 
+<ul>
 <% @autoridads.each do |autoridad| %>
-    <%= link_to autoridad.name, edit_autoridad_path(autoridad) %>
-		<br />
+		<li><%= link_to autoridad.name,
+edit_autoridad_path(autoridad) %></li>
 <% end %>
-
+		<li><%= link_to '... new', new_autoridad_path %></li>
+</ul>
 <br />
 
-<%= link_to '... new', new_autoridad_path %>

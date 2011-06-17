@@ -46,7 +46,7 @@ class AutoridadsController < ApplicationController
 
     respond_to do |format|
       if @autoridad.save
-        format.html { redirect_to(@autoridad, :notice => 'Autoridad was successfully created.') }
+        format.html { redirect_to(autoridads_url, :notice => 'Autoridad was successfully created.') }
         format.xml  { render :xml => @autoridad, :status => :created, :location => @autoridad }
       else
         format.html { render :action => "new" }
@@ -62,7 +62,7 @@ class AutoridadsController < ApplicationController
 
     respond_to do |format|
       if @autoridad.update_attributes(params[:autoridad])
-        format.html { redirect_to(@autoridad, :notice => 'Autoridad was successfully updated.') }
+        format.html { redirect_to(autoridads_url, :notice => 'Autoridad was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -78,7 +78,8 @@ class AutoridadsController < ApplicationController
     @autoridad.destroy
 
     respond_to do |format|
-      format.html { redirect_to(autoridads_url) }
+      format.html { redirect_to(autoridads_url, :notice =>
+'Autoridad was successfully deleted.') }
       format.xml  { head :ok }
     end
   end
