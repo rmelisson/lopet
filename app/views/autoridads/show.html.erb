@@ -1,0 +1,15 @@
+<h2>Autoridad</h2>
+
+<p>
+  <b>Name:</b>
+  <%= @autoridad.name %>
+</p>
+
+<p>
+  <b>Juez:</b>
+  <%= @autoridad.juez.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_autoridad_path(@autoridad) %> |
+<%= link_to 'Back', autoridads_path %>

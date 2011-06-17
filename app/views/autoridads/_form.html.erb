@@ -1,0 +1,19 @@
+<%= form_for(@autoridad) do |f| %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+	<div>
+		<% @juezs.each do |j| %>
+			<%= f.radio_button(:juez_id, j.id) %>
+			<%= f.label(:juez_name, j.name) %>
+			<br />
+		<% end %>
+	</div>
+	<br />
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+	<br />
+<% end %>

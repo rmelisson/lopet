@@ -1,6 +1,8 @@
 Lopet::Application.routes.draw do
 
 
+  resources :autoridads
+
   root :to => 'welcome#index'
 	match 'home' => 'welcome#home', :as => 'home'
 

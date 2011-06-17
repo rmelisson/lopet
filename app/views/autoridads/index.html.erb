@@ -1,0 +1,10 @@
+<h1>Listing autoridads</h1>
+
+<% @autoridads.each do |autoridad| %>
+    <%= link_to autoridad.name, edit_autoridad_path(autoridad) %>
+		<br />
+<% end %>
+
+<br />
+
+<%= link_to '... new', new_autoridad_path %>

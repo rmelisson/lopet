@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110617144726) do
+ActiveRecord::Schema.define(:version => 20110617150723) do
 
   create_table "accions", :force => true do |t|
     t.text     "hechos"
@@ -24,6 +24,13 @@ ActiveRecord::Schema.define(:version => 20110617144726) do
     t.string   "login"
     t.string   "password_hash"
     t.string   "password_salt"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "autoridads", :force => true do |t|
+    t.string   "name"
+    t.integer  "juez_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
