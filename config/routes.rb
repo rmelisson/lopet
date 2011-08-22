@@ -41,6 +41,7 @@ Lopet::Application.routes.draw do
 
 	# Logic
 	get 'generate' => 'generator#generate', :as => 'generate'
+	get 'generatex' => 'generator#generate_example', :as => 'generatex'
 	
 
   # The priority is based upon order of creation:
