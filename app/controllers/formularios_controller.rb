@@ -28,12 +28,8 @@ class FormulariosController < ApplicationController
   # GET /formularios/new
   # GET /formularios/new.xml
   def new
-    @formulario = Formulario.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @formulario }
-    end
+		@derecho = Derecho.find(params[:id])
+		@derecho.formularios.build()
   end
 
   # GET /formularios/1/edit
@@ -44,7 +40,8 @@ class FormulariosController < ApplicationController
   # POST /formularios
   # POST /formularios.xml
   def create
-    @formulario = Formulario.new(params[:formulario])
+		@derecho = Derecho.find(params[:derecho_id])
+		@formulario = @derecho.formularios.create(params[:formulario])
 
     respond_to do |format|
       if @formulario.save

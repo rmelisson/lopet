@@ -6,17 +6,19 @@ class DerechosController < ApplicationController
 	
 	def new
 		@tipo = Tipo.find(params[:id])
-		@derecho = Derecho.new
-		@derecho.tipo = @tipo
+		@tipo.derechos.build()
 	end
 
 	def create
-		@derecho = Derecho.new(params[:derecho])
+		@tipo = Tipo.find(params[:tipo_id])
+		@derecho = @tipo.derechos.create(params[:derecho])
+
 		if @derecho.save
-			redirect_to(@derecho, :notice => 'Derecho was
+			@derecho.save
+			redirect_to(tipos_path, :notice => 'Derecho was
 successfully created.')
 		else
-			render :action => 'new'
+			render :action => 'new', :status => @derecho.errors
 		end
 	end
 

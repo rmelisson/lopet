@@ -1,15 +1,4 @@
-<%= form_for(@formulario) do |f| %>
-  <% if @formulario.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@formulario.errors.count, "error") %> prohibited this formulario from being saved:</h2>
-
-      <ul>
-      <% @formulario.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= form_for([@derecho, @derecho.formularios.build]) do |f| %>
 
   <div class="field">
     <%= f.label :title %><br />

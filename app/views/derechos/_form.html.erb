@@ -1,4 +1,4 @@
-<%= form_for(@derecho) do |f| %>
+<%= form_for([@tipo, @tipo.derechos.build]) do |f| %>
 
 	<div class="field">
 		<%= f.label :title %><br />
