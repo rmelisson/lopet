@@ -11,21 +11,16 @@
 		<li>
 			<h3><%= tipo.title %></h3>
 			<% if admin %>
-				<%= link_to 'Edit', edit_tipo_path(tipo) %>
-				<%= link_to 'Destroy', tipo, :confirm => 'Are you sure?', :method => :delete %>
+				<%= link_to 'Edit', edit_tipo_path(tipo) %> | 
+				<%= link_to 'Destroy', tipo, :confirm => 'Are you sure?', :method => :delete %> | 
+				<%= link_to 'New derecho', new_derecho_path(:id => tipo.id) %>
 				<br />
 			<% end %>
-			<p class="desc"><i><%= tipo.description %></i></p>
+			<p class="desc"><%= tipo.description %></p>
 			<ul>
 				<% tipo.derechos.each do |derecho| %>
 					<li> 
 						<%= link_to derecho.title, derecho_path(:id =>derecho.id) %>
-					</li>
-				<% end %>
-				<% if admin %>
-					<li>
-						<%= link_to '... new derecho', new_derecho_path(:id =>
-	tipo.id) %> 
 					</li>
 				<% end %>
 			</ul>
