@@ -24,7 +24,7 @@ RedCloth.new(@accion.formulario.arguments).to_html} )
 		@accion.hechos = Populator.sentences(3..6)
 		@accion.id = 0
 		respond_to do
-  	  	html = render_to_string(:layout => false , :action => "accion.pdf.erb", :locals => {:arguments => RedCloth.new(@accion.formulario.arguments).to_html} )
+  	  	html = render_to_string(:layout => false , :action => "accion.pdf.erb", :locals => {:arguments => RedCloth.new(@accion.formulario.arguments).to_html, :num_demandante => "123456"} )
 	  	  kit = PDFKit.new(html)
   	  	kit.stylesheets << "#{Rails.root}/public/stylesheets/generated_pdf.css"
 				file_name = "accion-" + @accion.id.to_s + ".pdf"
