@@ -1,7 +1,9 @@
 class GeneratorController < ApplicationController
 
 	require "pdfkit"
-	
+	require "populator"
+
+	#TODO factorize those 2 methods	
 	def generate
     @accion = Accion.find(params[:id])
 		respond_to do
@@ -19,7 +21,7 @@ RedCloth.new(@accion.formulario.arguments).to_html} )
 
 	def generate_example
 		@accion = Accion.new(:formulario_id => params[:id], :user_id => 1)
-		@accion.hechos = "blablabalbalbalablalabl"
+		@accion.hechos = Populator.sentences(3..6)
 		@accion.id = 0
 		respond_to do
   	  	html = render_to_string(:layout => false , :action => "accion.pdf.erb", :locals => {:arguments => RedCloth.new(@accion.formulario.arguments).to_html} )

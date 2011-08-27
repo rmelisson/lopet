@@ -12,6 +12,9 @@ voluptates deserunt nisi voluptatem tempore et
 placeat placeat vel illum. Aliquid saepe ea sint qui
 inventore voluptatem qui dicta hic voluptate sunt
 </p>
+
+<% if !(admin || current_user) %>
+
 <div id="go">
 	
 	<div class="half" id="log-in">
@@ -32,3 +35,4 @@ inventore voluptatem qui dicta hic voluptate sunt
 		<h3><%= link_to "Create an account", new_user_path %>  </h3>
 	</div>
 </div>
+<% end %>

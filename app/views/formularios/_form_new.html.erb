@@ -1,4 +1,5 @@
-<%= form_for(@formulario) do |f| %>
+<!-- TODO merge with _form -->
+<%= form_for([@derecho, @derecho.formularios.build]) do |f| %>
   <div class="field">
     <%= f.label :title %><br />
     <%= f.text_field :title %>
