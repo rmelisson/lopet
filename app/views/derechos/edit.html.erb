@@ -1,5 +1,5 @@
 <h1>Editing derecho</h1>
 
-<%= render 'form' %>
+<%= render :partial => 'form', :locals => {:derecho => [@derecho]} %>
 
 <%= link_to 'Back', derecho_path(:id => @derecho.id) %>

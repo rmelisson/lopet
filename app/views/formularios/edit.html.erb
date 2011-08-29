@@ -1,7 +1,6 @@
 <h1>Editing formulario</h1>
 
-<%= render 'form' %>
+<%= render :partial => "form", :locals => {:formulario => @formulario} %>
 <br/>
 <%= link_to 'Show', @formulario %> |
-<%= link_to 'Back', derecho_path(:id =>
-@formulario.derecho_id ) %>
+<%= link_to 'Back', derecho_path(:id => @formulario.derecho_id ) %>
