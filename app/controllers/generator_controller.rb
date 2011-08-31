@@ -4,6 +4,13 @@ module RedCloth::Formatters::HTML
 	def footno(opts)
 		%Q{<sup class="footnote">#{opts[:text]}</sup>}
 	end
+
+	def fn(opts)
+		no = opts[:id]
+    opts[:id] = "fn#{no}"
+    opts[:class] = ["footnote", opts[:class]].compact.join(" ")
+    "<div#{pba(opts)}><sup>#{no}</sup> #{opts[:text]}</div>\n"
+	end
 end
 
 class GeneratorController < ApplicationController
