@@ -1,3 +1,9 @@
+module RedCloth::Formatters::HTML
+	def footno(opts)
+		%Q{<sup class="footnote">#{opts[:text]}</sup>}
+	end
+end
+
 class FormulariosController < ApplicationController
 	require "RedCloth"
 
@@ -18,6 +24,10 @@ class FormulariosController < ApplicationController
   # GET /formularios/1.xml
   def show
     @formulario = Formulario.find(params[:id])
+
+		
+		
+		@formulario.arguments = RedCloth.new(@formulario.arguments).to_html 
 
     respond_to do |format|
       format.html # show.html.erb
