@@ -1,3 +1,11 @@
+# Here we override RedCloth footnote formatter because it is
+# not compatible with pdf generation
+module RedCloth::Formatters::HTML
+	def footno(opts)
+		%Q{<sup class="footnote">#{opts[:text]}</sup>}
+	end
+end
+
 class GeneratorController < ApplicationController
 
 	require "pdfkit"
