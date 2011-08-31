@@ -1,19 +1,14 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Title:</b>
+<h3>
   <%= @formulario.title %>
-</p>
+</h3>
 
-<p>
-  <b>Description:</b>
+<p class="desc">
   <%= @formulario.description %>
 </p>
 
-<p>
-  <b>Arguments:</b>
-  <%= @formulario.arguments %>
-</p>
+<div class="arguments">
+	<%=	raw @formulario.arguments %>
+</div>
 
 <%= link_to 'Edit', edit_formulario_path(@formulario) %> |
 <%= link_to 'Back', derecho_path(:id =>
