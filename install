@@ -4,7 +4,15 @@ ruby 1.9.2
 rubygem
 rails
 bundle
+wkhtmltopdf :
+	https://github.com/jdpace/PDFKit/wiki/Installing-WKHTMLTOPDF
+	see config/initializers/pdfkit.rb
+manage langage ... ?
+heroku
 
 - Then run into application home :
 bundle install
 
+- For testing purpose, run 
+rake db:reset
+rake db:populate
