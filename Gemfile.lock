@@ -42,6 +42,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.17.2)
     pdfkit (0.5.2)
+    pg (0.11.0)
     polyglot (0.3.3)
     populator (1.0.0)
     rack (1.2.4)
@@ -79,6 +80,7 @@ DEPENDENCIES
   RedCloth
   bcrypt-ruby
   pdfkit
+  pg
   populator
   rails (= 3.0.5)
   sqlite3
